@@ -38,18 +38,7 @@ async function run() {
       res.send(result);
     });
 
-    app.get("/mycart", async (req, res) => {
-      const cursor = myCartCollection.find();
-      const result = await cursor.toArray();
-      res.send(result);
-    });
-
-    app.delete("/mycart/:id", async (req, res) => {
-      const id = req.params.id;
-      const query = { _id: new ObjectId(id) };
-      const result = await myCartCollection.deleteOne(query);
-      res.send(result);
-    });
+   
 
     // for products
 
