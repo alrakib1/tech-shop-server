@@ -38,7 +38,13 @@ async function run() {
       res.send(result);
     });
 
-   
+    app.get("/mycart", async (req, res) => {
+      const cursor = myCartCollection.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    });
+
+    
 
     // for products
 
